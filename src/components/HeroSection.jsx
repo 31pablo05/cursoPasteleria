@@ -65,7 +65,7 @@ const HeroSection = () => {
             stiffness: 200,
             damping: 20
           }}
-          className="mb-6 md:mb-8"
+          className="mb-4 sm:mb-6 md:mb-8"
         >
           <div className="relative">
             <motion.div 
@@ -73,7 +73,7 @@ const HeroSection = () => {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
-            <FaGift className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white drop-shadow-2xl mx-auto mb-4 relative z-10" />
+            <FaGift className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-white drop-shadow-2xl mx-auto mb-3 sm:mb-4 relative z-10" />
           </div>
         </motion.div>
 
@@ -81,17 +81,17 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 md:mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight"
         >
-          <span className="text-white drop-shadow-2xl">
+          <span className="text-white drop-shadow-2xl block sm:inline">
             Curso Profesional de
           </span>
-          <br />
+          <br className="hidden sm:block" />
           <motion.span 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-yellow-300 drop-shadow-2xl"
+            className="text-yellow-300 drop-shadow-2xl block sm:inline"
           >
             Pastelería Creativa
           </motion.span>
@@ -101,7 +101,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white mb-6 sm:mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg px-2 sm:px-4"
         >
           ✨ Descubre el arte de la repostería profesional y convierte tu pasión en una 
           <span className="font-semibold text-yellow-300"> habilidad extraordinaria</span> ✨
@@ -111,18 +111,18 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center mb-6 sm:mb-8 md:mb-12 px-4"
         >
           <Link
             to="about"
             smooth={true}
             duration={800}
-            className="group relative"
+            className="group relative w-full sm:w-auto"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-semibold transition-all duration-300 cursor-pointer flex items-center gap-3 shadow-2xl hover:shadow-pink-500/25 backdrop-blur-sm border border-white/20"
+              className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 sm:gap-3 shadow-2xl hover:shadow-pink-500/25 backdrop-blur-sm border border-white/20"
             >
               <motion.div
                 animate={{ rotate: [0, 360] }}
@@ -139,12 +139,12 @@ const HeroSection = () => {
             to="contact"
             smooth={true}
             duration={800}
-            className="group relative"
+            className="group relative w-full sm:w-auto"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white/20 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white/30 hover:border-white/50 px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-semibold transition-all duration-300 cursor-pointer shadow-2xl"
+              className="bg-white/20 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white/30 hover:border-white/50 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 cursor-pointer shadow-2xl"
             >
               <span className="whitespace-nowrap">Más Información</span>
             </motion.div>
@@ -155,28 +155,28 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="flex flex-wrap justify-center gap-4 md:gap-8 text-white"
+          className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 text-white px-2"
         >
           <motion.div 
             whileHover={{ y: -5, scale: 1.05 }}
-            className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 rounded-full shadow-lg border border-white/20"
+            className="flex items-center justify-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full shadow-lg border border-white/20"
           >
-            <FaClock className="text-yellow-300 text-lg md:text-xl" />
-            <span className="text-sm md:text-base font-medium">6 semanas</span>
+            <FaClock className="text-yellow-300 text-sm sm:text-lg md:text-xl flex-shrink-0" />
+            <span className="text-xs sm:text-sm md:text-base font-medium">6 semanas</span>
           </motion.div>
           <motion.div 
             whileHover={{ y: -5, scale: 1.05 }}
-            className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 rounded-full shadow-lg border border-white/20"
+            className="flex items-center justify-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full shadow-lg border border-white/20"
           >
-            <FaUsers className="text-yellow-300 text-lg md:text-xl" />
-            <span className="text-sm md:text-base font-medium">Grupos pequeños</span>
+            <FaUsers className="text-yellow-300 text-sm sm:text-lg md:text-xl flex-shrink-0" />
+            <span className="text-xs sm:text-sm md:text-base font-medium">Grupos pequeños</span>
           </motion.div>
           <motion.div 
             whileHover={{ y: -5, scale: 1.05 }}
-            className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 rounded-full shadow-lg border border-white/20"
+            className="flex items-center justify-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full shadow-lg border border-white/20"
           >
-            <FaCertificate className="text-yellow-300 text-lg md:text-xl" />
-            <span className="text-sm md:text-base font-medium">Certificación</span>
+            <FaCertificate className="text-yellow-300 text-sm sm:text-lg md:text-xl flex-shrink-0" />
+            <span className="text-xs sm:text-sm md:text-base font-medium">Certificación</span>
           </motion.div>
         </motion.div>
       </div>

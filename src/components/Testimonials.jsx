@@ -31,28 +31,28 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-br from-gray-50 via-pink-25 to-purple-50 relative overflow-hidden">
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-pink-25 to-purple-50 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-pink-200 to-transparent rounded-full opacity-20"
+          className="absolute top-0 right-0 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-l from-pink-200 to-transparent rounded-full opacity-20"
           animate={{ rotate: 360, scale: [1, 1.2, 1] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-purple-200 to-transparent rounded-full opacity-15"
+          className="absolute bottom-0 left-0 w-56 sm:w-64 lg:w-80 h-56 sm:h-64 lg:h-80 bg-gradient-to-r from-purple-200 to-transparent rounded-full opacity-15"
           animate={{ rotate: -360, y: [0, -30, 0] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold text-center mb-20"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <span className="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
             Lo que dicen
@@ -63,7 +63,7 @@ const Testimonials = () => {
           </span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -80,14 +80,14 @@ const Testimonials = () => {
               className="group relative"
             >
               {/* Card container */}
-              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 relative overflow-hidden">
+              <div className="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl lg:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 relative overflow-hidden">
                 
                 {/* Gradient overlay on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                 
                 {/* Stars rating */}
                 <motion.div 
-                  className="flex mb-6 relative z-10"
+                  className="flex mb-4 sm:mb-6 relative z-10"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.2 + 0.5 }}
@@ -100,55 +100,55 @@ const Testimonials = () => {
                       transition={{ delay: index * 0.2 + 0.6 + i * 0.1 }}
                       whileHover={{ scale: 1.2, rotate: 15 }}
                     >
-                      <FaStar className="text-yellow-400 text-2xl mx-1" />
+                      <FaStar className="text-yellow-400 text-lg sm:text-xl lg:text-2xl mx-0.5 sm:mx-1" />
                     </motion.div>
                   ))}
                 </motion.div>
 
                 {/* Quote content */}
                 <motion.p 
-                  className="text-gray-700 mb-8 text-lg leading-relaxed italic relative z-10 group-hover:text-gray-800 transition-colors duration-300"
+                  className="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg leading-relaxed italic relative z-10 group-hover:text-gray-800 transition-colors duration-300"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.2 + 0.7 }}
                 >
-                  <span className="text-4xl text-pink-300 absolute -top-2 -left-2">"</span>
+                  <span className="text-2xl sm:text-3xl lg:text-4xl text-pink-300 absolute -top-1 sm:-top-2 -left-1 sm:-left-2">"</span>
                   {testimonial.content}
-                  <span className="text-4xl text-pink-300 absolute -bottom-4 -right-2">"</span>
+                  <span className="text-2xl sm:text-3xl lg:text-4xl text-pink-300 absolute -bottom-2 sm:-bottom-4 -right-1 sm:-right-2">"</span>
                 </motion.p>
 
                 {/* Author info */}
                 <motion.div 
-                  className="flex items-center gap-4 relative z-10"
+                  className="flex items-center gap-3 sm:gap-4 relative z-10"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.2 + 0.8 }}
                 >
                   {/* Avatar */}
                   <motion.div 
-                    className={`w-16 h-16 bg-gradient-to-r ${testimonial.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                    className={`w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 bg-gradient-to-r ${testimonial.gradient} rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base lg:text-lg shadow-lg`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     {testimonial.image}
                   </motion.div>
                   
                   <div>
-                    <h4 className="font-bold text-gray-800 text-xl group-hover:text-gray-900 transition-colors duration-300">
+                    <h4 className="font-bold text-gray-800 text-base sm:text-lg lg:text-xl group-hover:text-gray-900 transition-colors duration-300">
                       {testimonial.name}
                     </h4>
-                    <p className={`text-transparent bg-gradient-to-r ${testimonial.gradient} bg-clip-text font-semibold`}>
+                    <p className={`text-transparent bg-gradient-to-r ${testimonial.gradient} bg-clip-text font-semibold text-sm sm:text-base`}>
                       {testimonial.role}
                     </p>
                   </div>
                 </motion.div>
 
                 {/* Decorative corner elements */}
-                <div className="absolute top-4 right-4 w-8 h-8 border-2 border-pink-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 w-6 h-6 border-2 border-pink-200 rounded-full opacity-15 group-hover:opacity-30 transition-opacity duration-500" />
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-2 border-pink-200 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-4 sm:w-6 h-4 sm:h-6 border-2 border-pink-200 rounded-full opacity-15 group-hover:opacity-30 transition-opacity duration-500" />
               </div>
 
               {/* External glow effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${testimonial.gradient} rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -z-10 blur-2xl`} />
+              <div className={`absolute inset-0 bg-gradient-to-r ${testimonial.gradient} rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -z-10 blur-2xl`} />
             </motion.div>
           ))}
         </div>
@@ -159,9 +159,9 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 1 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-14 lg:mt-16"
         >
-          <div className="flex justify-center gap-4 mb-8">
+          <div className="flex justify-center gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8">
             {[...Array(5)].map((_, i) => (
               <motion.div
                 key={i}
@@ -170,11 +170,11 @@ const Testimonials = () => {
                 transition={{ delay: 1.2 + i * 0.1 }}
                 whileHover={{ scale: 1.3, rotate: 15 }}
               >
-                <FaStar className="text-yellow-400 text-3xl" />
+                <FaStar className="text-yellow-400 text-2xl sm:text-3xl" />
               </motion.div>
             ))}
           </div>
-          <p className="text-xl text-gray-700 font-semibold">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 font-semibold px-4">
             ¡Únete a más de{" "}
             <span className="text-transparent bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text font-bold">
               200+ estudiantes satisfechos!
